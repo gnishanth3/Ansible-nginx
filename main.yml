@@ -1,0 +1,8 @@
+---
+- hosts: webservers
+  sudo: yes
+  tasks:
+    - name: install nginx
+      yum: name=nginx update_cache=yes state=latest
+    - name:  start nginx
+      service: name=nginx state=started
